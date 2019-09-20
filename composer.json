@@ -1,0 +1,16 @@
+{
+    "name": "uirapuru/generator",
+    "require": {
+        "jane-php/json-schema": "^5.0",
+        "swaggest/json-schema": "^0.12.19",
+        "swaggest/php-code-builder": "^0.2.16",
+        "phpunit/phpunit": "^8.3",
+        "symfony/http-client": "^4.3"
+    },
+    "authors": [
+        {
+            "name": "Grzegorz 'Uirapuru' Kaszuba",
+            "email": "uirapuruadg@gmail.com"
+        }
+    ]
+}
