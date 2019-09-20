@@ -12,7 +12,7 @@ use APM\Metadata\System\Container;
 use APM\Metadata\System\Kubernetes\Node;
 use APM\Metadata\System\Kubernetes\Pod;
 
-class MetadataFactory
+class MetadataFactory extends AbstractFactory
 {
     /** @var string */
     protected $name;
@@ -70,7 +70,17 @@ class MetadataFactory
 
     public function fromJson(string $json) : Metadata
     {
-        return Metadata::import(json_decode($json));
+        return self::fromArray(json_decode($json));
+    }
+
+    public function fromArray(array $array) : Metadata
+    {
+        return Metadata::import($array);
+    }
+
+    public function import(object $data) : Metadata
+    {
+        return Metadata::import($data);
     }
 
     public function get() : Metadata
