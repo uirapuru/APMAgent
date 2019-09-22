@@ -10,7 +10,8 @@
             "properties": {
                 "id": {
                     "description": "Hex encoded 64 random bits ID of the span.",
-                    "type": ["string"]
+                    "type": "string",
+                    "maxLength": 1024
                 },
                 "transaction_id": {
                     "type": ["string", "null"],
