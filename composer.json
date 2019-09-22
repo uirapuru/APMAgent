@@ -6,7 +6,9 @@
         "swaggest/php-code-builder": "^0.2.16",
         "phpunit/phpunit": "^8.3",
         "symfony/http-client": "^4.3",
-      "ext-json": "*"
+      "ext-json": "*",
+        "symfony/debug": "^4.3",
+        "coduo/php-matcher": "^3.2"
     },
     "authors": [
         {

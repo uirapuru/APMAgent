@@ -27,16 +27,4 @@ class Span extends ClassStructure
             self::names()->start,
         );
     }
-
-    /**
-     * @param float $start
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setStart($start)
-    {
-        $this->start = $start;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
 }

@@ -38,16 +38,4 @@ class Subtype extends ClassStructure
         $ownerSchema->title = "Span Subtype";
         $ownerSchema->setFromRef('../span_subtype.json');
     }
-
-    /**
-     * @param string|null $subtype A further sub-division of the type (e.g. postgresql, elasticsearch)
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setSubtype($subtype)
-    {
-        $this->subtype = $subtype;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
 }

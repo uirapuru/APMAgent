@@ -39,16 +39,4 @@ class Epoch extends ClassStructure
         $ownerSchema->description = "Object with 'timestamp' property.";
         $ownerSchema->setFromRef('../timestamp_epoch.json');
     }
-
-    /**
-     * @param int|null $timestamp Recorded time of the event, UTC based and formatted as microseconds since Unix epoch
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setTimestamp($timestamp)
-    {
-        $this->timestamp = $timestamp;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
 }

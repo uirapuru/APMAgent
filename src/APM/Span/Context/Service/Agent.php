@@ -58,40 +58,4 @@ class Agent extends ClassStructure
         );
         $ownerSchema->description = "Name and version of the Elastic APM agent";
     }
-
-    /**
-     * @param string|null $name Name of the Elastic APM agent, e.g. "Python"
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
-
-    /**
-     * @param string|null $version Version of the Elastic APM agent, e.g."1.0.0"
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setVersion($version)
-    {
-        $this->version = $version;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
-
-    /**
-     * @param string|null $ephemeralId Free format ID used for metrics correlation by some agents
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setEphemeralId($ephemeralId)
-    {
-        $this->ephemeralId = $ephemeralId;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
 }

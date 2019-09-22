@@ -35,16 +35,4 @@ class Type extends ClassStructure
         $ownerSchema->title = "Span Type";
         $ownerSchema->setFromRef('../span_type.json');
     }
-
-    /**
-     * @param string $type Keyword of specific relevance in the service's domain (eg: 'db.postgresql.query', 'template.erb', etc)
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
 }

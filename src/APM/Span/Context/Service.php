@@ -39,28 +39,4 @@ class Service extends ClassStructure
         $properties->name->pattern = "^[a-zA-Z0-9 _-]+$";
         $ownerSchema->description = "Service related information can be sent per event. Provided information will override the more generic information from metadata, non provided fields will be set according to the metadata information.";
     }
-
-    /**
-     * @param Agent|null $agent Name and version of the Elastic APM agent
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setAgent($agent)
-    {
-        $this->agent = $agent;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
-
-    /**
-     * @param string|null $name Immutable name of the service emitting this event
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
 }

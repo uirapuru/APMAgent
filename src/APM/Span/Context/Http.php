@@ -56,40 +56,4 @@ class Http extends ClassStructure
         );
         $ownerSchema->description = "An object containing contextual data of the related http request.";
     }
-
-    /**
-     * @param string|null $url The raw url of the correlating http request.
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
-
-    /**
-     * @param int|null $statusCode The status code of the http request.
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->statusCode = $statusCode;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
-
-    /**
-     * @param string|null $method The method of the http request.
-     * @return $this
-     * @codeCoverageIgnoreStart
-     */
-    public function setMethod($method)
-    {
-        $this->method = $method;
-        return $this;
-    }
-    /** @codeCoverageIgnoreEnd */
 }

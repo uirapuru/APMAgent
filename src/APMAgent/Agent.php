@@ -2,7 +2,6 @@
 
 namespace APMAgent;
 
-use APMAgent\Factory\EventFactory;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class Agent
@@ -23,9 +22,13 @@ class Agent
     {
         $body = $this->store->jsonSerialize();
 
+        die(var_dump($body));
+
         $this->client->request("POST", "/intake/v2/events", [
-            "json" => json_decode($body, JSON_OBJECT_AS_ARRAY)
+            "body" => $body
         ]);
+
+        $this->store->reset();
     }
 
     public function push($events)

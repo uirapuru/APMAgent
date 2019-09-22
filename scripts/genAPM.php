@@ -3,11 +3,11 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $array = [
-    "Metadata" => "metadata.json",
-    "Transaction" => "transactions/transaction.json",
+//    "Metadata" => "metadata.json",
+//    "Transaction" => "transactions/transaction.json",
     "Span" => "spans/span.json",
-    "Error" => "errors/error.json",
-    "Metricset" => "metricsets/metricset.json",
+//    "Error" => "errors/error.json",
+//    "Metricset" => "metricsets/metricset.json",
 ];
 
 chdir(realpath(__DIR__ . "/Resources"));
@@ -28,10 +28,9 @@ function generate($rootClass, $file) {
     $app->setNamespaceRoot($appNs, '.');
 
     $builder = new \Swaggest\PhpCodeBuilder\JsonSchema\PhpBuilder();
-    $builder->buildSetters = true;
+    $builder->buildSetters = false;
+    $builder->buildGetters = false;
     $builder->makeEnumConstants = true;
-    $builder->buildSetters = true;
-
     $builder->namesFromDescriptions = true;
 
     $builder->classCreatedHook = new \Swaggest\PhpCodeBuilder\JsonSchema\ClassHookCallback(
@@ -51,6 +50,9 @@ function generate($rootClass, $file) {
 
             if ('#' === $path) {
                 $class->setName($rootClass);
+            } elseif (strpos($path, '#/definitions/') === 0) {
+                $class->setName(\Swaggest\PhpCodeBuilder\PhpCode::makePhpClassName(
+                    substr($path, strlen('#/definitions/'))));
             }
 
             $fqcn = preg_split('/(?=[A-Z])/', $class->getName(), -1, PREG_SPLIT_NO_EMPTY);
