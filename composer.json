@@ -8,12 +8,16 @@
         "symfony/http-client": "^4.3",
       "ext-json": "*",
         "symfony/debug": "^4.3",
-        "coduo/php-matcher": "^3.2"
+        "coduo/php-matcher": "^3.2",
+        "nette/php-generator": "^3.2"
     },
     "authors": [
         {
             "name": "Grzegorz 'Uirapuru' Kaszuba",
             "email": "uirapuruadg@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "api-platform/schema-generator": "^2.1"
+    }
 }
